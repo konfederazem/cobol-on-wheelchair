@@ -93,6 +93,7 @@ const commands = {
     new Server().listen(port);
   },
   watch: () => {
+    compile();
     const watchHandler = (event, filename) => {
       if (filename.substr(-4).toLowerCase() === ".cbl") {
         compile(`File ${filename} changed.`);
